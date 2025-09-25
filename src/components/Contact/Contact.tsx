@@ -13,10 +13,7 @@ export function Contact() {
             </header>
 
             <div className="contacts">
-                <div>
-                    <strong>Address: </strong>
-                    <span>No. 91, Kumarakanda, Maggona, Kaluthara</span>
-                </div>
+
                 <div>
                     <a href="mailto:dilshanbuddhi40@gmail.com">
                         <img src={emailIcon} alt="Email" />
