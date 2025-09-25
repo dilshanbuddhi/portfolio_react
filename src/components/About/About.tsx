@@ -13,29 +13,41 @@ import nodeIcon from "../../assets/node-icon.svg";
 import firebaseIcon from "../../assets/Firebase_Logo_(No_wordmark)_(2024-).svg";
 
 // Define animation variants with proper typing
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2, // Stagger children animations
+    },
+  },
+};
+
 const textVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }, // Use valid easing function
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
 const skillVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.8 },
+  hidden: { opacity: 0, scale: 0.8, y: 20 },
   visible: (i: number) => ({
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.4, delay: i * 0.1, ease: "easeOut" },
+    y: 0,
+    transition: { duration: 0.4, delay: i * 0.15, ease: "easeOut" }, // Slightly increased delay for smoother stagger
   }),
 };
 
 const imageVariants: Variants = {
-  hidden: { opacity: 0, x: 100 },
+  hidden: { opacity: 0, x: 100, scale: 0.95 },
   visible: {
     opacity: 1,
     x: 0,
+    scale: 1,
     transition: { duration: 0.8, ease: "easeOut" },
   },
 };
@@ -45,10 +57,10 @@ export function About() {
       <Container id="about">
         <motion.div
             className="about-text"
+            variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={textVariants}
+            viewport={{ once: false, amount: 0.3 }} // Replay on scroll
         >
           <motion.h2 variants={textVariants}>About Me</motion.h2>
           <motion.p variants={textVariants}>
@@ -77,7 +89,13 @@ export function About() {
           </motion.div>
 
           <motion.h3 variants={textVariants}>Main Skills</motion.h3>
-          <div className="hard-skills">
+          <motion.div
+              className="hard-skills"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.5 }} // Replay on scroll
+          >
             {[
               { src: java, alt: "Java" },
               { src: springIcon, alt: "Spring Boot" },
@@ -94,23 +112,23 @@ export function About() {
                     key={skill.alt}
                     className="hability"
                     custom={index}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.5 }}
                     variants={skillVariants}
+                    whileHover={{ scale: 1.1, rotate: 5 }} // Add hover effect
+                    viewport={{ once: false }}
                 >
                   <img src={skill.src} alt={skill.alt} />
                 </motion.div>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
 
         <motion.div
             className="about-image"
+            variants={imageVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={imageVariants}
+            viewport={{ once: false, amount: 0.3 }} // Replay on scroll
+            whileHover={{ scale: 1.05 }} // Subtle hover effect for image
         >
           <img src={myPhoto} alt="My Profile" className="profile-img" />
         </motion.div>

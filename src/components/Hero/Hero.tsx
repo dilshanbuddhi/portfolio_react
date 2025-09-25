@@ -8,6 +8,7 @@ import whatsapp from '../../assets/whatsapp.svg'
 import Hello from '../../assets/Hello.gif'
 import telegram from '../../assets/telegram.svg'
 import { useEffect, useState } from 'react'
+import { motion, Variants } from "framer-motion";
 
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false)
@@ -21,6 +22,54 @@ export function Hero() {
     return () => clearTimeout(timer)
   }, [])
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Stagger animations for children
+      },
+    },
+  };
+
+  const textVariants: Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const buttonVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  const iconVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 0.4, delay: i * 0.1, ease: "easeOut" },
+    }),
+  };
+
+  const imageVariants: Variants = {
+    hidden: { opacity: 0, x: 100, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
       <Container id="home" className={isVisible ? 'animate-in' : ''}>
         <div className="hero-text">
@@ -30,8 +79,8 @@ export function Hero() {
           <h1 className="name">Buddhi Dilshan</h1>
           <h3 className="title">Software Engineer</h3>
           <p className="small-resume">1 Year Experience</p>
-          <BrowserRouter>
-            <NavHashLink smooth to="#contact" className="button">
+          <BrowserRouter >
+            <NavHashLink smooth to="#contact" className="button" style={{ marginTop: "20px" }}>
               Contact Me
             </NavHashLink>
           </BrowserRouter>

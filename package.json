@@ -13,6 +13,7 @@
     "@types/react-dom": "^17.0.9",
     "@vercel/analytics": "^1.4.1",
     "framer-motion": "^12.23.21",
+    "motion": "^12.23.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-google-recaptcha": "^2.1.0",
