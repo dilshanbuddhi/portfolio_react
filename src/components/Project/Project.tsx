@@ -1,6 +1,5 @@
 import { Container } from "./styles";
 import githubIcon from "../../assets/github.svg";
-import externalLink from "../../assets/external-link.svg";
 
 export function Project() {
   return (
