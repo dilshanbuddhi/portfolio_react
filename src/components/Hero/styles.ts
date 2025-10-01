@@ -1,88 +1,93 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
-  padding-top: 15%;
-  display: flex;
-  justify-content: space-between;
-  gap: 8rem;
-  background: rgba(0,0,0,0);
-  .hero-text{
-    & > p{
-      font-size: 1.8rem;
-    }
-    h1{
-      font-size: 7rem;
-    }
-
-    h3{
-      color:var(--green);
-      margin: 1rem 0;
-    }
-
-    
-    p.small-resume {
-      margin-bottom: 5rem;
-    }
-  }
-// New added
-  .social-media{
-    display: inline-flex;
-    align-items: center;
+    padding-top: 15%;
+    display: flex;
     justify-content: space-between;
-    gap: 1rem;
-    padding-top:5rem;
-    padding-left:1rem;
+    gap: 8rem;
+    background: rgba(0, 0, 0, 0);
 
-    img,span{
-      font-size: 3rem;
-      width: 3.5rem;
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        & > p {
+            font-size: 1.8rem;
+        }
+
+        h1 {
+            font-size: 7rem;
+        }
+
+        h3 {
+            color: var(--green);
+            margin: 1rem 0;
+        }
+
+        p.small-resume {
+            margin-bottom: 2rem;
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 1rem;
+
+            .contact_btn {
+                border: none;
+                cursor: pointer;
+                background-color: var(--green);
+                color: #FFFF;
+                border-radius: 2rem;
+                font-weight: 500;
+                transition: filter 0.25s;
+                padding: 1.2rem 4rem;
+                text-decoration: none;
+
+                &:hover {
+                    filter: brightness(0.8);
+                }
+            }
+
+            .social-media {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                .social-link {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        width: 3rem;
+                        height: 3rem;
+                        transition: filter 0.25s;
+
+                        &:hover {
+                            filter: brightness(0.8);
+                        }
+                    }
+                }
+            }
+        }
     }
-  }
 
-
-  .button{
-    margin-top: 1rem;
-    padding: 1.4rem 6rem;
-  }
-
-  .hero-image{
-    img{
-      max-width: 500px;
+    .hero-image {
+        img {
+            max-width: 500px;
+        }
     }
-  }
 
-
-  @media(max-width: 960px){
-    display: block;
-    margin-top: 15%;
-    .hero-text{
-
-      h1{
-        font-size: 5rem;
-      }
-    }
-    
-    .hero-image{
-      display: none;
-    }
-  }
-
-  @media(max-width: 600px){
-    margin-top: 35%;
-  }
-  @media(max-width: 480px){
-    margin-top: 45%;
-  }
-
-    /* Add these styles to your existing Container styled component */
-
-    /* Base animation states - elements start invisible */
+    /* Animation styles */
     .hero-text .greeting,
     .hero-text .name,
     .hero-text .title,
     .hero-text .small-resume,
-    .hero-text .button,
-    .hero-text .social-media,
+    .hero-text .button-container,
+    .hero-text .social-media .social-link,
     .hero-image img {
         opacity: 0;
         transform: translateY(30px);
@@ -94,17 +99,13 @@ export const Container = styled.section`
     }
 
     .hero-text .social-media .social-link {
-        opacity: 0;
         transform: translateY(20px) scale(0.8);
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .hero-image img {
         transform: translateX(50px) scale(0.9);
-        opacity: 0;
     }
 
-    /* Animated states when visible */
     &.animate-in .hero-text .greeting {
         opacity: 1;
         transform: translateY(0);
@@ -129,40 +130,34 @@ export const Container = styled.section`
         transition-delay: 0.8s;
     }
 
-    &.animate-in .hero-text .button {
+    &.animate-in .hero-text .button-container {
         opacity: 1;
         transform: translateY(0);
         transition-delay: 1s;
     }
 
-    &.animate-in .hero-text .social-media {
-        opacity: 1;
-        transform: translateY(0);
-        transition-delay: 1.2s;
-    }
-
     &.animate-in .hero-text .social-media .social-link:nth-child(1) {
         opacity: 1;
         transform: translateY(0) scale(1);
-        transition-delay: 1.3s;
+        transition-delay: 1.1s;
     }
 
     &.animate-in .hero-text .social-media .social-link:nth-child(2) {
         opacity: 1;
         transform: translateY(0) scale(1);
-        transition-delay: 1.4s;
+        transition-delay: 1.2s;
     }
 
     &.animate-in .hero-text .social-media .social-link:nth-child(3) {
         opacity: 1;
         transform: translateY(0) scale(1);
-        transition-delay: 1.5s;
+        transition-delay: 1.3s;
     }
 
     &.animate-in .hero-text .social-media .social-link:nth-child(4) {
         opacity: 1;
         transform: translateY(0) scale(1);
-        transition-delay: 1.6s;
+        transition-delay: 1.4s;
     }
 
     &.animate-in .hero-image img {
@@ -171,7 +166,6 @@ export const Container = styled.section`
         transition-delay: 0.8s;
     }
 
-    /* Additional smooth animations */
     .hero-text .name {
         background: linear-gradient(135deg, #60a5fa, #a78bfa, #f59e0b);
         background-clip: text;
@@ -182,32 +176,121 @@ export const Container = styled.section`
     }
 
     @keyframes gradientShift {
-        0%, 100% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
+        0%,
+        100% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
     }
 
-    /* Breathing animation for the image */
     &.animate-in .hero-image img {
         animation: breathe 4s ease-in-out infinite;
         animation-delay: 2s;
     }
 
     @keyframes breathe {
-        0%, 100% { transform: translateX(0) scale(1); }
-        50% { transform: translateX(0) scale(1.02); }
-    }
-
-    /* Mobile responsiveness for animations */
-    @media (max-width: 768px) {
-        .hero-image img {
-            transform: translateY(30px) scale(0.9);
+        0%,
+        100% {
+            transform: translateX(0) scale(1);
         }
-
-        &.animate-in .hero-image img {
-            transform: translateY(0) scale(1);
+        50% {
+            transform: translateX(0) scale(1.02);
         }
     }
-`
 
+    /* Responsive styles */
+    @media (max-width: 960px) {
+        display: block;
+        margin-top: 15%;
+        padding: 2rem;
 
+        .hero-text {
+            h1 {
+                font-size: 5rem;
+            }
 
+            .button-container {
+                flex-direction: row;
+                align-items: center;
+                gap: 1.5rem;
+
+                .contact_btn {
+                    padding: 1rem 3rem;
+                }
+
+                .social-media {
+                    gap: 0.8rem;
+
+                    .social-link img {
+                        width: 2.5rem;
+                        height: 2.5rem;
+                    }
+                }
+            }
+        }
+
+        .hero-image {
+            display: none;
+        }
+    }
+
+    @media (max-width: 600px) {
+        margin-top: 35%;
+        padding: 1.5rem;
+
+        .hero-text {
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            & > p {
+                font-size: 1.5rem;
+            }
+
+            .button-container {
+                gap: 1rem;
+
+                .contact_btn {
+                    padding: 0.8rem 2rem;
+                    font-size: 0.9rem;
+                }
+
+                .social-media .social-link img {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        margin-top: 45%;
+        padding: 1rem;
+
+        .hero-text {
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            & > p {
+                font-size: 1.2rem;
+            }
+
+            .button-container {
+                gap: 0.8rem;
+
+                .contact_btn {
+                    padding: 0.7rem 1.5rem;
+                    font-size: 0.8rem;
+                }
+
+                .social-media .social-link img {
+                    width: 1.8rem;
+                    height: 1.8rem;
+                }
+            }
+        }
+    }
+`;
