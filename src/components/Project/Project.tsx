@@ -64,7 +64,7 @@ export function Project() {
                 </svg>
                 <div className="project-links">
                   <a
-                      href="https://github.com/YourGitHub/SmartParkingSystem"
+                      href="https://github.com/dilshanbuddhi/microService_FinalCW.git"
                       target="_blank"
                       rel="noreferrer"
                   >
@@ -110,7 +110,7 @@ export function Project() {
                 </svg>
                 <div className="project-links">
                   <a
-                      href="https://github.com/YourGitHub/BookClub"
+                      href="https://github.com/dilshanbuddhi/bookClub_FrontEnd.git"
                       target="_blank"
                       rel="noreferrer"
                   >
@@ -156,7 +156,7 @@ export function Project() {
                 </svg>
                 <div className="project-links">
                   <a
-                      href="https://github.com/YourGitHub/CineTrack"
+                      href="https://github.com/dilshanbuddhi/CineTrack.git"
                       target="_blank"
                       rel="noreferrer"
                   >
@@ -182,6 +182,60 @@ export function Project() {
             </div>
           </motion.div>
 
+          <motion.div variants={projectVariants} viewport={{ once: false }}>
+            <div className="project">
+              <header>
+                <svg
+                    width="50"
+                    xmlns="http://www.w3.org/2000/svg"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#23ce6b"
+                    strokeWidth="1"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                >
+                  <title>Folder</title>
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <div className="project-links">
+                  <a
+                      href="https://github.com/dilshanbuddhi/SmallWorld_BackEnd.git"
+                      target="_blank"
+                      rel="noreferrer"
+                  >
+                    <img src={githubIcon} alt="GitHub" />
+                  </a>
+                </div>
+              </header>
+              <div className="body">
+                <h3>SmallWorld – Tourism Web Application</h3>
+                <p>
+                  A web platform to explore tourist destinations, discover hotels,
+                  and connect with local guides.
+                  <br />
+                  Highlights:
+                  <ul>
+                    <li>Real-time location updates using WebSocket.</li>
+                    <li>Integrated payment gateway for hotel bookings.</li>
+                    <li>API Gateway for secure and scalable microservices communication.</li>
+                  </ul>
+                </p>
+              </div>
+              <footer>
+                <ul className="tech-list">
+                  <li>Spring Boot</li>
+                  <li>WebSocket</li>
+                  <li>Google Maps API</li>
+                  <li>PayHere</li>
+                  <li>API Gateway</li>
+                </ul>
+              </footer>
+            </div>
+          </motion.div>
+
+
           {/* Project 4 */}
           <motion.div variants={projectVariants} viewport={{ once: false }}>
             <div className="project">
@@ -202,7 +256,7 @@ export function Project() {
                 </svg>
                 <div className="project-links">
                   <a
-                      href="https://github.com/YourGitHub/SmartElectionSystem"
+                      href="https://github.com/dilshanbuddhi/Election_project-Layered.git"
                       target="_blank"
                       rel="noreferrer"
                   >
