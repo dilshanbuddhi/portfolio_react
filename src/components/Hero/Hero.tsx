@@ -37,7 +37,7 @@ export function Hero() {
             </BrowserRouter>
             <div className="social-media">
               <a
-                  href="https://www.linkedin.com/in/codevinayak"
+                  href="https://www.linkedin.com/in/buddhi-dilshan-411557319"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn Profile"
@@ -46,7 +46,7 @@ export function Hero() {
                 <img src={linkedin} alt="LinkedIn" />
               </a>
               <a
-                  href="https://github.com/CodeVinayak/"
+                  href="https://github.com/dilshanbuddhi/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="GitHub Profile"
@@ -55,7 +55,7 @@ export function Hero() {
                 <img src={githubIcon} alt="GitHub" />
               </a>
               <a
-                  href="https://api.whatsapp.com/send/?phone=%2B919630576848&text=Hello+Vinayak+I+found+your+contact+through+portfolio+site.%0A%0A"
+                  href="https://api.whatsapp.com/send?phone=94782960721&text=Hello+Dilshan+I+found+your+contact+through+portfolio+site"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="WhatsApp Contact"
@@ -64,7 +64,7 @@ export function Hero() {
                 <img src={whatsapp} alt="WhatsApp" />
               </a>
               <a
-                  href="https://t.me/CodeVinayak"
+                  href="https://t.me/Dilshan12800"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Telegram Contact"
