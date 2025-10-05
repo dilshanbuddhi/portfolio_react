@@ -62,8 +62,8 @@ export const Container = styled.section`
                     justify-content: center;
 
                     img {
-                        width: 3rem;
-                        height: 3rem;
+                        width: 4rem;
+                        height: 4rem;
                         transition: filter 0.25s;
 
                         &:hover {
@@ -224,8 +224,8 @@ export const Container = styled.section`
                     gap: 0.8rem;
 
                     .social-link img {
-                        width: 2.5rem;
-                        height: 2.5rem;
+                        width: 3rem;
+                        height: 3rem;
                     }
                 }
             }
@@ -253,13 +253,13 @@ export const Container = styled.section`
                 gap: 1rem;
 
                 .contact_btn {
-                    padding: 0.8rem 2rem;
-                    font-size: 0.9rem;
+                    padding: 1.3rem 2.5rem;
+                    font-size: 1.5rem;
                 }
 
                 .social-media .social-link img {
-                    width: 2rem;
-                    height: 2rem;
+                    width: 3.5rem;
+                    height: 3.5rem;
                 }
             }
         }
@@ -282,13 +282,13 @@ export const Container = styled.section`
                 gap: 0.8rem;
 
                 .contact_btn {
-                    padding: 0.7rem 1.5rem;
-                    font-size: 0.8rem;
+                    padding: 1.2rem 2rem;
+                    font-size: 1.2rem;
                 }
 
                 .social-media .social-link img {
-                    width: 1.8rem;
-                    height: 1.8rem;
+                    width: 2.8rem;
+                    height: 2.8rem;
                 }
             }
         }
